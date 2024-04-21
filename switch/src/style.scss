@@ -1,0 +1,73 @@
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+.app {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 100%;
+     height: 100vh;
+     background-color: #434343;
+
+     .toggle-switch-btn {
+          width: 160px;
+          height: 60px;
+          background-color: white;
+          border-radius: 50px;
+          border: 1px solid #cecece90;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          padding: 0 10px;
+          transition: 600ms;
+          position: relative;
+          cursor: pointer;
+
+          .sun, .moon {
+               font-size: 2.5rem;
+               color: rgb(179, 179, 49);
+               position: relative;
+               
+          }
+          .star {
+               color: #fff;
+               font-size: 2.5rem;
+               animation: iconAnim 500ms ease-out linear infinite;
+               @keyframes iconAnim {
+                    from {
+                         transform: translateX(-10rem);
+                    } to {
+                         transform: translateX(0);
+                    }
+               }
+          }
+          .moon {
+               color: #e064ff;
+               position: absolute;
+               right: 10px;
+               transition: 500ms ease-out;
+               animation: iconAnim 500ms ease-out linear normal;
+               @keyframes iconAnim {
+                    from {
+                         transform: translateX(-10rem);
+                    } to {
+                         transform: translateX(0);
+                    }
+               }
+          }
+          .sun-deactive {
+               opacity: 0;
+          }
+          .moon-deactive {
+               opacity: 0;
+          }
+     }
+     .toggle-switch-btn:hover {
+          border: 2px solid mediumslateblue;
+     }
+     .toggle-switch-btn:active {
+          transform: translateY(5px);
+     }
+}
